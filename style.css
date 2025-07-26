@@ -77,7 +77,7 @@ body {
   margin: 1.2rem 0;
   cursor: pointer;
   transition: color 0.2s, font-weight 0.2s;
-  color: #232323;
+  color: #444;
   font-weight: 500;
   letter-spacing: 1px;
 }
@@ -135,6 +135,62 @@ footer hr {
   margin-bottom: 0.5rem;
   font-weight: 400;
   letter-spacing: 1px;
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.2rem 2.2rem;
+  margin: 2rem 0 0 0;
+  width: 100%;
+  max-width: 500px;
+}
+.project-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.project-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.project-link:hover .project-thumb {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+  transform: scale(1.04);
+}
+.project-thumb {
+  width: 180px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  margin-bottom: 0.7rem;
+  background: #eee;
+  transition: box-shadow 0.15s, transform 0.15s;
+}
+.project-title {
+  font-size: 1.08rem;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 0.2rem;
+  color: #232323;
+}
+.back-to-projects {
+  margin-top: 2rem;
+  padding: 0.6rem 1.4rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  background: #232323;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.back-to-projects:hover {
+  background: #444;
 }
 @media (max-width: 900px) {
   .container {
