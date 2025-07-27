@@ -26,6 +26,18 @@ const projects = [
     image: 'images/project4.jpg',
     page: 'project4',
     descriptionFile: 'projects/project4.md'
+  },
+  {
+    title: 'Nixie Clock',
+    image: 'images/nixie.gif',
+    page: 'nixie',
+    descriptionFile: 'projects/nixie.md'
+  },
+  {
+    title: 'Magnus Prusa i3 ',
+    image: 'images/printer_printing.gif',
+    page: 'printer',
+    descriptionFile: 'projects/printer.md'
   }
 ];
 
@@ -43,7 +55,7 @@ const pages = {
       <p>I was the <strong>Radar Perception Lead</strong> for the <strong>Cavalier Autonomous Racing</strong> team, where I worked on <strong>radar object detection</strong> for an autonomous race car that hit speeds over <strong>120 mph</strong> in the <strong>Indy Autonomous Challenge</strong>. I tuned <strong>tracking filters</strong>, <strong>optimzied code</strong> for real-time racing, and helped the team get the most out of our sensors. <a href="http://autonomousracing.dev" target="_blank">Learn more</a></p>
       <h2>What I'm Up To Now</h2>
       <p><strong>Robotics Software Engineer</strong>, Applied Research Laboratories at <strong>UT Austin</strong> (July 2023 - Present)<br></p>
-      <p>These days, I'm working on <strong> Unmanned Underwater Vehicles </strong> at ARLUT. In my free time I have also been working on an <strong> autonomous mobile robot </strong> to navigate around my apartment and bring me drinks on the couch. </p>
+      <p>These days, I'm working on <strong> Unmanned Underwater Vehicles (UUVs) </strong> at ARLUT. In my free time I have also been working on an <strong> autonomous mobile robot </strong> to navigate around my apartment and bring me drinks on the couch. </p>
     `
   },
   projects: {
@@ -58,10 +70,6 @@ const pages = {
         </div>
       `).join('')}
     </div>`
-  },
-  notes: {
-    title: 'Notes',
-    content: `<p>Personal notes, blog posts, or articles can be listed here.</p>`
   },
   login: {
     title: 'Login',

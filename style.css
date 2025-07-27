@@ -139,10 +139,11 @@ footer hr {
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   gap: 2.2rem 2.2rem;
   margin: 2rem 0 0 0;
   width: 100%;
-  max-width: 500px;
+  max-width: 700px;
 }
 .project-item {
   display: flex;
@@ -162,8 +163,8 @@ footer hr {
   transform: scale(1.04);
 }
 .project-thumb {
-  width: 180px;
-  height: 120px;
+  width: 240px;
+  height: 160px;
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.07);
