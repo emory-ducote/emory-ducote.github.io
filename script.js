@@ -4,28 +4,34 @@ const bodyContent = document.getElementById('bodyContent');
 
 const projects = [
   {
-    title: 'Project One',
-    image: 'images/project1.jpg',
+    title: 'Drink Delivery Bot',
+    image: 'images/truckbot.gif',
     page: 'project1',
     descriptionFile: 'projects/project1.md'
   },
   {
-    title: 'Project Two',
-    image: 'images/project2.jpg',
+    title: 'RACECAR Dataset',
+    image: 'images/racecar_dataset.gif',
     page: 'project2',
     descriptionFile: 'projects/project2.md'
   },
   {
-    title: 'Project Three',
-    image: 'images/project3.jpg',
-    page: 'project3',
+    title: 'CAR Radar Perception Pipeline',
+    image: 'images/ekf.gif',
+    page: 'perception_pipeline',
     descriptionFile: 'projects/project3.md'
   },
   {
-    title: 'Project Four',
-    image: 'images/project4.jpg',
-    page: 'project4',
+    title: 'Futbot!',
+    image: 'images/futbot.gif',
+    page: 'futbot',
     descriptionFile: 'projects/project4.md'
+  },
+  {
+    title: 'Chicken Battle',
+    image: 'images/dodgeball_battle.gif',
+    page: 'chicken_battle',
+    descriptionFile: 'projects/project1.md'
   },
   {
     title: 'Nixie Clock',
@@ -61,13 +67,15 @@ const pages = {
   projects: {
     title: 'Projects',
     content: `<div class="projects-grid">
-      ${projects.map(p => `
+      ${projects.map(p => p.page ? `
         <div class="project-item">
           <a href="#" class="project-link" data-project="${p.page}">
             <img src="${p.image}" alt="${p.title}" class="project-thumb">
             <div class="project-title">${p.title}</div>
           </a>
         </div>
+      ` : `
+        <div class="project-item" style="visibility:hidden;"></div>
       `).join('')}
     </div>`
   },
