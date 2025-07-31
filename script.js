@@ -116,13 +116,11 @@ function renderProjectPage(proj) {
     fetch(project.descriptionFile)
       .then(res => res.text())
       .then(md => {
-        // Simple markdown to HTML: convert # Title to <h2>, newlines to <br>
-        let html = md
-          .replace(/^# (.*)$/m, '<h2>$1</h2>')
-          .replace(/\n/g, '<br>');
+        // Use marked.js for full markdown rendering
+        let html = window.marked ? window.marked.parse(md) : md;
         bodyContent.innerHTML = `
           <h1>${project.title}</h1>
-          <img src="${project.image}" alt="${project.title}" class="project-thumb" style="margin-bottom:1.5rem;">
+          <img src="${project.image}" alt="${project.title}" class="project-thumb project-thumb-large" style="margin-bottom:2rem;">
           <div class="project-desc">${html}</div>
           <button class="back-to-projects">Back to Projects</button>
         `;
