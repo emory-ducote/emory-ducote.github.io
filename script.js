@@ -31,7 +31,7 @@ const projects = [
     title: 'Chicken Battle',
     image: 'images/dodgeball_battle.gif',
     page: 'chicken_battle',
-    descriptionFile: 'projects/project1.md'
+    descriptionFile: 'projects/robot_chicken.md'
   },
   {
     title: 'Nixie Clock',
