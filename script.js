@@ -125,6 +125,10 @@ function renderProjectPage(proj) {
           <button class="back-to-projects">Back to Projects</button>
         `;
         document.querySelector('.back-to-projects').onclick = () => renderPage('projects');
+          // Trigger MathJax typesetting for LaTeX rendering
+          if (window.MathJax && window.MathJax.typesetPromise) {
+            window.MathJax.typesetPromise([bodyContent]);
+          }
       });
   }
 }

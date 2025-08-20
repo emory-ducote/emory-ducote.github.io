@@ -49,24 +49,62 @@ From the D435i datasheet, the sensor has a 74 degree FOV and a horizontal pixel 
 
 With a given bearing, range estimate for our orange ball from the camera sensor, we can now proceed with tracking the opponent using our detections. We did that with an Extended Kalman Filter.
 
+#### Motion Model
+
+Differential Motion Model  
+
+Control, angular velocity of left and right wheels:
+
+$$
+\mathbf{u} = 
 \begin{bmatrix}
-\dot{x} \\
-\dot{y} \\
+\omega_l \\\\
+\omega_r
+\end{bmatrix}
+$$
+
+For the ball detection, the height is fixed and we only consider $x$, $y$, and $\theta$.
+
+$$
+\begin{bmatrix}
+\dot{x} \\\\
+\dot{y} \\\\
 \dot{\theta}
-\end{bmatrix}
-=
+\end{bmatrix} =
 \begin{bmatrix}
-\frac{R_w}{2\eta} (\omega_l + w_l + \omega_r + w_r) \cos\theta \\
-\frac{R_w}{2\eta} (\omega_l + w_l + \omega_r + w_r) \sin\theta \\
-\frac{R_w}{l\eta} (\omega_r + w_r - \omega_l - w_l)
+\frac{R_w}{2\eta} \ (\omega_l + \omega_r) \cos\theta \\\\
+\frac{R_w}{2\eta} \ (\omega_l + \omega_r) \sin\theta \\\\
+\frac{R_w}{l\eta} \ (\omega_r - \omega_l)
 \end{bmatrix}
+$$
 
-- Insert Differential Motion
-- Insert Differential Motion Model Noise
-- Insert Sensor
-- Insert Sensor Model Noise
+where $R_m$ is the motor radius, $R_w$ is the wheel radius, and $\eta = \frac{R_w}{R_m}$.
 
-We added these equations to our live EKF, running as a ros node on the vehicle.
+#### Sensor Model
+
+Polar sensor to cartesian location:
+
+$$
+\mathbf{x} = d\sin(\theta) \\ 
+\mathbf{y} = d\cos(\theta)
+$$
+
+and their associated noise matrix:
+
+$$
+\Sigma ^{polar} = \begin{bmatrix}
+\sigma _{R} & 0 \\\\
+0 & \sigma _{\theta} \\
+\end{bmatrix}
+$$
+
+In cartesian form:
+
+$$
+\Sigma ^{cartesian} = \mathbf{J} \Sigma ^{polar} \mathbf{J} ^{T}
+$$
+
+We based our EKF impelementation in these equations, running as a ros node on the vehicle.
 
 ### Localization
 
@@ -91,3 +129,5 @@ We mapped both our location and the opponent location into the discrete grid, wh
 <div style="text-align:center; margin: 1.5rem 0;">
 	<img src="../images/discrete_grid_with_opponent.png" alt="Robot Chicken" style="width: 80%;" />
 </div>
+
+This naive discrete grid-based technique worked well enough for the final project, and we were one of the few teams with a non-hardcoded competition trajectory.
