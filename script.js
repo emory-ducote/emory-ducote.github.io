@@ -4,19 +4,19 @@ const bodyContent = document.getElementById('bodyContent');
 
 const projects = [
   {
-    title: 'Drink Delivery Bot',
+    title: 'Drink Delivery Bot (WIP)',
     image: 'images/truckbot.gif',
     page: 'drink_delivery_bot',
     descriptionFile: 'projects/drinkbot.md'
   },
   {
-    title: 'RACECAR Dataset',
+    title: 'RACECAR Dataset (WIP)',
     image: 'images/racecar_dataset.gif',
     page: 'project2',
     descriptionFile: 'projects/racecar_dataset.md'
   },
   {
-    title: 'CAR Radar Perception Pipeline',
+    title: 'CAR Radar Perception Pipeline (WIP)',
     image: 'images/ekf.gif',
     page: 'perception_pipeline',
     descriptionFile: 'projects/radar_perception_pipeline.md'
