@@ -41,7 +41,7 @@ We used the ROS wrapper for AprilTag 3 to visually detect the goal’s coordinat
 
 ### Move-to-Kicking-Pose
 
-We implemented a go-to-goal behavior to move the robot to its desired kicking pose (xd, yd, θd), using a PID controller for velocity and a proportional controller for steering. Destination coordinates were computed from the angle and distance between the goal and ball, accounting for ball diameter and kicking distance. Once within a threshold, the robot rotated to align with both ball and goal.
+We implemented a go-to-goal behavior to move the robot to its desired kicking pose - $x_d$, $y_d$, $θ_d$, using a PID controller for velocity and a proportional controller for steering. Destination coordinates were computed from the angle and distance between the goal and ball, accounting for ball diameter and kicking distance. Once within a threshold, the robot rotated to align with both ball and goal.
 
 <div style="text-align:center; margin: 1.5rem 0;">
 	<img src="../images/gotogoal.png" alt="Go To Goal Goal" style="width: 40%;" />

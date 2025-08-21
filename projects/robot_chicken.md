@@ -93,8 +93,8 @@ and their associated noise matrix:
 
 $$
 \Sigma ^{polar} = \begin{bmatrix}
-\sigma _{R} & 0 \\\\
-0 & \sigma _{\theta} \\
+\sigma _{R}^{2} & 0 \\\\
+0 & \sigma _{\theta}^{2} \\
 \end{bmatrix}
 $$
 
