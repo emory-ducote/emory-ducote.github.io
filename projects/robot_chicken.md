@@ -131,3 +131,5 @@ We mapped both our location and the opponent location into the discrete grid, wh
 </div>
 
 This naive discrete grid-based technique worked well enough for the final project, and we were one of the few teams with a non-hardcoded competition trajectory.
+
+_Credit to my teammates, Xuhui Kang and Yu-Sheng Wang_
