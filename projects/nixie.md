@@ -49,7 +49,7 @@ For pin control, I opted to use an arduino nano for its small form-factor and ea
 
 ### Testing
 
-After checking out this single tube setup, I went ahead with testing a 6-digit clock + dot separator setup. After some tedious wiring, I was able to get the system working.
+After checking out this single tube setup, I went ahead with testing a 6-digit clock + dot separator setup. After some tedious wiring, I was able to get the system working. 
 
 <div style="text-align:center; margin: 2rem 0;">
   <img src="../images/nixie.gif" alt="Nixie GIF" style="width:60%;" />
@@ -65,7 +65,7 @@ To round out the circuit, I added a TINY RTC clock module to keep time in betwee
   <div style="font-size:1.1rem; color:#444; margin-top:0.5rem;">PCB Design</div>
 </div>
 
-After having the board manufactered, I soldered everything together I cut and finished a housing out of some wood we had laying around in the garage.
+After having the board manufactered, I soldered everything together I cut and finished a housing out of some wood we had laying around in the garage. I flashed some basic code to the arduino to control the tubes - which I've uploaded to a [github repo](https://github.com/emory-ducote/Nixie_Code/blob/master/Clock/Clock.ino).
 
 <div style="text-align:center; margin: 2rem 0;">
   <img src="../images/final_clock.png" alt="Final Nixie Clock" style="width:100%;" />

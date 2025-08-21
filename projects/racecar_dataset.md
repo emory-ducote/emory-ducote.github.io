@@ -1,0 +1,1 @@
+While at UVA I helped put together the RACECAR dataset, I will add more information here eventually but this [github repo](https://github.com/linklab-uva/RACECAR_DATA) describes the project!

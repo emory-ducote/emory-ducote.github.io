@@ -6,26 +6,26 @@ const projects = [
   {
     title: 'Drink Delivery Bot',
     image: 'images/truckbot.gif',
-    page: 'project1',
-    descriptionFile: 'projects/project1.md'
+    page: 'drink_delivery_bot',
+    descriptionFile: 'projects/drinkbot.md'
   },
   {
     title: 'RACECAR Dataset',
     image: 'images/racecar_dataset.gif',
     page: 'project2',
-    descriptionFile: 'projects/project2.md'
+    descriptionFile: 'projects/racecar_dataset.md'
   },
   {
     title: 'CAR Radar Perception Pipeline',
     image: 'images/ekf.gif',
     page: 'perception_pipeline',
-    descriptionFile: 'projects/project3.md'
+    descriptionFile: 'projects/radar_perception_pipeline.md'
   },
   {
     title: 'Futbot!',
     image: 'images/futbot.gif',
     page: 'futbot',
-    descriptionFile: 'projects/project4.md'
+    descriptionFile: 'projects/futbot.md'
   },
   {
     title: 'Chicken Battle',
