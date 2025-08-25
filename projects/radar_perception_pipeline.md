@@ -14,6 +14,56 @@ The sensor I primarily interfaced with was the Aptiv Electronically Scanning Rad
     <div style="font-size:1.1rem; color:#444; margin-top:0.5rem;">Radar FOV</div>
 </div>
 
+The radar publishes up to 64 distinguishable tracks along with details about the track. The driver from [AutonomousStuff](https://autonomoustuff.atlassian.net/wiki/spaces/RW/pages/17509820/Delphi+ESR) publishes this data on the `EsrTrack` message shown below:
+
+```
+std_msgs/Header header
+
+# ESR Track
+string        canmsg
+
+uint8         id
+float32       lat_rate
+bool          grouping_changed
+bool          oncoming
+uint8         status
+float32       angle
+float32       range
+bool          bridge_object
+bool          rolling_count
+float32       width
+float32       range_accel
+uint8         med_range_mode
+float32       range_rate
+```
+
+With this message we are able to resolve its relative position with the angle, range fields. There is other useful information like the `range_rate` which effectively gives us the relative velocity of the target to the sensor. There are also some other field that are less useful to this application, like `bridge_object`, which indicates if the detected object is likely a bridge - a useful indicator in ADAS systems.
+
+### Filtering
+
+The sensor updates at 20 Hz, so with a possible
+
+$$
+64\ tracks * 20\ cycles = 1280\ tracks per second
+$$
+
+it is useful to do some heavy filtering before trying to process all of those. As a first pass, its trivial to think about the speeds the vehicles will be going. We can expect that while on a racetrack with other vehicles, any object with a similar velocity to the ego is likely a valid track. We can use the `range_rate` value discussed earlier to do a filtering pass.
+
+```
+if (!(abs(track->track_range_rate) < odom->twist.twist.linear.x*vel_scalar))
+{
+    return;
+}
+```
+
+Where `vel_scalar` functions to allow a wider range of values as the vehicle's linear velocity increases. This pass functions to drop many of the non-interesting tracks, as the racetrack walls and other metal structures get picked up pretty easily.
+
+<div style="text-align:center; margin: 1.5rem 0;">
+	<img src="../images/radar_unfiltered.png" alt="Radar Unfiltered" style="width: 100%;" />
+    <div style="font-size:1.1rem; color:#444; margin-top:0.5rem;">Radar Unfiltered</div>
+</div>
+
+
 <div style="text-align:center; margin: 1.5rem 0;">
 	<img src="../images/radar_detections.gif" alt="Radar FOV" style="width: 100%;" />
     <div style="font-size:1.1rem; color:#444; margin-top:0.5rem;">Radar FOV</div>
