@@ -6,42 +6,56 @@ const projects = [
   {
     title: 'Drink Delivery Bot (WIP)',
     image: 'images/truckbot.gif',
+    imageDescription: 'Drink Delivery Bot Delivering a Beverage',
     page: 'drink_delivery_bot',
     descriptionFile: 'projects/drinkbot.md'
   },
   {
     title: 'RACECAR Dataset (WIP)',
     image: 'images/racecar_dataset.gif',
+    imageDescription: 'Different Sensor Streams on a Snippet of Data',
     page: 'project2',
     descriptionFile: 'projects/racecar_dataset.md'
   },
   {
-    title: 'CAR Radar Perception Pipeline (WIP)',
+    title: 'Autonomous Racing Opponent Tracking (WIP)',
     image: 'images/ekf.gif',
+    imageDescription: 'Tracking EKF Output after combining Radar + LIDAR Estimate',
     page: 'perception_pipeline',
+    descriptionFile: 'projects/opponent_tracking.md'
+  },
+  {
+    title: 'Radar Perception Pipeline',
+    image: 'images/radar_detections.gif',
+    imageDescription: 'Radar Tracks Post-Filtering',
+    page: 'radar_pipeline',
     descriptionFile: 'projects/radar_perception_pipeline.md'
   },
   {
     title: 'Futbot!',
     image: 'images/futbot.gif',
+    imageDescription: 'Futbot Scoring a Goal',
     page: 'futbot',
     descriptionFile: 'projects/futbot.md'
   },
   {
     title: 'Chicken Battle',
     image: 'images/dodgeball_battle.gif',
+    imageDescription: 'Robot Chicken Fight',
     page: 'chicken_battle',
     descriptionFile: 'projects/robot_chicken.md'
   },
   {
     title: 'Nixie Clock',
     image: 'images/nixie.gif',
+    imageDescription: 'Tube Clock Testing Setup',
     page: 'nixie',
     descriptionFile: 'projects/nixie.md'
   },
   {
     title: 'Magnus Prusa i3 ',
     image: 'images/printer_printing.gif',
+    imageDescription: "Magnus i3 Printing UVA's Logo",
     page: 'printer',
     descriptionFile: 'projects/printer.md'
   }
@@ -120,8 +134,9 @@ function renderProjectPage(proj) {
         let html = window.marked ? window.marked.parse(md) : md;
         bodyContent.innerHTML = `
           <h1>${project.title}</h1>
-          <img src="${project.image}" alt="${project.title}" class="project-thumb project-thumb-large" style="margin-bottom:2rem;">
           <div class="project-desc">${html}</div>
+          <img src="${project.image}" alt="${project.title}" class="project-thumb project-thumb-large" style="margin-bottom:2rem;">
+          <div style="font-size:1.1rem; color:#444; margin-top:0.5rem;">${project.imageDescription}</div>
           <button class="back-to-projects">Back to Projects</button>
         `;
         document.querySelector('.back-to-projects').onclick = () => renderPage('projects');

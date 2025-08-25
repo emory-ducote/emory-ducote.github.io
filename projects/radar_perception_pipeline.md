@@ -59,12 +59,29 @@ if (!(abs(track->track_range_rate) < odom->twist.twist.linear.x*vel_scalar))
 Where `vel_scalar` functions to allow a wider range of values as the vehicle's linear velocity increases. This pass functions to drop many of the non-interesting tracks, as the racetrack walls and other metal structures get picked up pretty easily.
 
 <div style="text-align:center; margin: 1.5rem 0;">
-	<img src="../images/radar_unfiltered.png" alt="Radar Unfiltered" style="width: 100%;" />
+	<img src="../images/radar_unfiltered.png" alt="Radar Unfiltered" style="width: 70%;" />
     <div style="font-size:1.1rem; color:#444; margin-top:0.5rem;">Radar Unfiltered</div>
 </div>
 
+Looking at the unfiltered data, many tracks outside track bounds also stand out. Another tool we used for filtering, was our estimate of the track bounds. Prior to racing at a particular track, we create maps of the outer bound and inner bound of the racetrack as well as several different racelines.
 
 <div style="text-align:center; margin: 1.5rem 0;">
-	<img src="../images/radar_detections.gif" alt="Radar FOV" style="width: 100%;" />
-    <div style="font-size:1.1rem; color:#444; margin-top:0.5rem;">Radar FOV</div>
+	<img src="../images/tracklines.jpg" alt="Tracklines" style="width: 60%;" />
+    <div style="font-size:1.1rem; color:#444; margin-top:0.5rem;">Track Bounds and Racelines at LVMS</div>
 </div>
+
+Using localization estimate, we can grab slice of bounds in global frame and transform it to local frame. Then we can create a polygonal convex hull structure of n points of the slice and cycle through tracks, removing any that are outside of the hull where lookup is O(log n).
+
+<div style="text-align:center; margin: 1.5rem 0;">
+	<img src="../images/bounds_test.png" alt="Convex Hull Filtering" style="width: 40%;" />
+    <div style="font-size:1.1rem; color:#444; margin-top:0.5rem;">Convex Hull Filtering</div>
+</div>
+
+The stages of the full algorithm are shown below.
+
+<div style="text-align:center; margin: 1.5rem 0;">
+	<img src="../images/radar_algorithm_diagram.png" alt="Radar Algorithm Diagram" style="width: 80%;" />
+    <div style="font-size:1.1rem; color:#444; margin-top:0.5rem;">Radar Algorithm Diagram</div>
+</div>
+
+The results of applying this algorithm to one of our datasets is shown below. As we approach the other vehicle from behind, the filtered radar tracks (dark blue boxes) are clearly visible. As a sidenote the gray boxes that appear when the vehicles are close together is the result of the LIDAR methods. 
