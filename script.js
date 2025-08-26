@@ -11,25 +11,25 @@ const projects = [
     descriptionFile: 'projects/drinkbot.md'
   },
   {
-    title: 'RACECAR Dataset (WIP)',
-    image: 'images/racecar_dataset.gif',
-    imageDescription: 'Different Sensor Streams on a Snippet of Data',
-    page: 'project2',
-    descriptionFile: 'projects/racecar_dataset.md'
+    title: 'Radar Perception Pipeline',
+    image: 'images/radar_detections.gif',
+    imageDescription: 'Radar Tracks Post-Filtering',
+    page: 'radar_pipeline',
+    descriptionFile: 'projects/radar_perception_pipeline.md'
   },
   {
-    title: 'Autonomous Racing Opponent Tracking (WIP)',
+    title: 'Autonomous Racing Opponent Tracking',
     image: 'images/ekf.gif',
     imageDescription: 'Tracking EKF Output after combining Radar + LIDAR Estimate',
     page: 'perception_pipeline',
     descriptionFile: 'projects/opponent_tracking.md'
   },
   {
-    title: 'Radar Perception Pipeline',
-    image: 'images/radar_detections.gif',
-    imageDescription: 'Radar Tracks Post-Filtering',
-    page: 'radar_pipeline',
-    descriptionFile: 'projects/radar_perception_pipeline.md'
+    title: 'RACECAR Dataset (WIP)',
+    image: 'images/racecar_dataset.gif',
+    imageDescription: 'Different Sensor Streams on a Snippet of Data',
+    page: 'project2',
+    descriptionFile: 'projects/racecar_dataset.md'
   },
   {
     title: 'Futbot!',
