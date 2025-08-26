@@ -104,3 +104,5 @@ We compared our EKF estimate from some ground truth from the RACECAR dataset, th
 </div>
 
 From these residual plots, one can see that the max error in the longitudinal (X) direction was on average ~5 meters and the max error in the lateral (Y) direction was ~2 meters for evaluation on one of our datasets.
+
+_Credit to my perception team teammates John Chrosniak, Max Dawkins, Utkarsh Chirimar, Trent Weiss and others_

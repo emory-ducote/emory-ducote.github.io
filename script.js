@@ -25,7 +25,7 @@ const projects = [
     descriptionFile: 'projects/opponent_tracking.md'
   },
   {
-    title: 'RACECAR Dataset (WIP)',
+    title: 'RACECAR Dataset',
     image: 'images/racecar_dataset.gif',
     imageDescription: 'Different Sensor Streams on a Snippet of Data',
     page: 'project2',
