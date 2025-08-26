@@ -44,7 +44,7 @@ With this message we are able to resolve its relative position with the angle, r
 The sensor updates at 20 Hz, so with a possible
 
 $$
-64\ tracks * 20\ cycles = 1280\ tracks per second
+64\ tracks * 20\ cycles = 1280\ tracks\ per\ second
 $$
 
 it is useful to do some heavy filtering before trying to process all of those. As a first pass, its trivial to think about the speeds the vehicles will be going. We can expect that while on a racetrack with other vehicles, any object with a similar velocity to the ego is likely a valid track. We can use the `range_rate` value discussed earlier to do a filtering pass.
