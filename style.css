@@ -258,7 +258,7 @@ footer hr {
     max-width: 98vw;
   }
 }
-/* pre {
+pre {
     background-color: #f0f0f0;
     padding: 16px;
     border-radius: 8px;
@@ -266,17 +266,12 @@ footer hr {
     font-size: 18px;
     line-height: 1.5;
 }
-
 pre code {
     background: transparent;
-    padding: 0;
-    border-radius: 0;
+    font-size: inherit;
 }
-
-p code,
-li code,
-td code {
+code {
     background-color: #f0f0f0;
     padding: 2px 4px;
     border-radius: 4px;
-} */
+}
