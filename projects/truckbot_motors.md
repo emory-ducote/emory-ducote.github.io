@@ -43,10 +43,16 @@ Then, we take our value from the previous reading, `lastEncoderRead`, shift it 2
 Now we have some idea of when we *just measured* and what was  *previously measured*. Using the properties of the hall quadrature encoder, we can now decode into encoder counts in a given direction. 
 
 The encoder typical output looks like the [time series](https://www.google.com/url?sa=t&source=web&rct=j&url=http%3A%2F%2Fmakeatronics.blogspot.com%2F2013%2F02%2Fefficiently-reading-quadrature-with.html&ved=0CBYQjRxqFwoTCPDMzYmT05QDFQAAAAAdAAAAABBW&opi=89978449) below:
-![[encoder_signals.png]]
+
+<div style="text-align:center; margin: 1.5rem 0;">
+	<img src="../images/encoder_signals.png" alt="Encoder Signals" style="width: 40%;" />
+</div>
 
 This [truth table](https://www.google.com/url?sa=t&source=web&rct=j&url=http%3A%2F%2Fmakeatronics.blogspot.com%2F2013%2F02%2Fefficiently-reading-quadrature-with.html&ved=0CBYQjRxqFwoTCODluaOS05QDFQAAAAAdAAAAABAF&opi=89978449) maps that property into a direction / count:
-![[encoder_truth_table.png]]
+
+<div style="text-align:center; margin: 1.5rem 0;">
+	<img src="../images/encoder_truth_table.png" alt="Encoder Truth Table" style="width: 40%;" />
+</div>
 
 Now given we have our `encoderEdgeChange` containing the old and new values, we can add or decrement the encoder counts accordingly:
 ```
