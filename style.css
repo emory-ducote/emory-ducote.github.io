@@ -266,11 +266,16 @@ pre {
     font-size: 18px;
     line-height: 1.5;
 }
+
 pre code {
     background: transparent;
-    font-size: inherit;
+    padding: 0;
+    border-radius: 0;
 }
-code {
+
+p code,
+li code,
+td code {
     background-color: #f0f0f0;
     padding: 2px 4px;
     border-radius: 4px;
