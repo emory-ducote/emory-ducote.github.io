@@ -84,6 +84,8 @@ void EncoderDriver::handleEdgeChange()
 }
 ```
 
+## Calculating Speed
+
 Now we have an encoder count, but what does that really mean? From our motor specs we can see that at the gearbox shaft output is rated for 700 CPR (counts per revolution).  So 700 counts will accrue across one full rotation of the motor. Now, what defines a full count?
 
 A full count for a quadrature encoder is made of:
