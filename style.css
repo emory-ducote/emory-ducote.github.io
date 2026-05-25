@@ -258,3 +258,11 @@ footer hr {
     max-width: 98vw;
   }
 }
+pre {
+    font-size: 18px;
+    line-height: 1.5;
+    padding: 1em;
+}
+code {
+    font-size: 18px;
+}
