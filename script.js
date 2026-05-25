@@ -4,6 +4,13 @@ const bodyContent = document.getElementById('bodyContent');
 
 const projects = [
   {
+    title: 'Truckbot Motors / Encoders',
+    image: 'images/truckbot.gif',
+    imageDescription: 'Truckbot Motors / Encoders',
+    page: 'truckbot_motors',
+    descriptionFile: 'projects/truckbot_motors.md'
+  },
+  {
     title: 'Drink Delivery Bot (WIP)',
     image: 'images/truckbot.gif',
     imageDescription: 'Drink Delivery Bot Delivering a Beverage',
