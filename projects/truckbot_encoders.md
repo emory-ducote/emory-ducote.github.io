@@ -20,7 +20,9 @@ The truckbot uses four [FIT0186 motors](https://www.digikey.com/short/144zn5cn):
 
 ## Reading the Encoders
 
-Each motor contain quadrature encoders. The encoder is getting power from the 5V rail on the pi and getting read via two GPIO pins on the pi as well. By reading the voltage transitions on the pi, we can count how many ticks the encoder has turned, from the [source code](https://github.com/emory-ducote/truckbot/blob/60c08c0ceb4e2999cb8607cf415aae438494dc13/src/control/src/EncoderDriver.cpp#L46-L60):
+Each motor contain quadrature encoders. The encoder is getting power from the 5V rail on the pi and getting read via two GPIO pins on the pi as well. By reading the voltage transitions on the pi, we can count how many ticks the encoder has turned.
+
+The following chunks of code are from the vehicle [source code](https://github.com/emory-ducote/truckbot/blob/60c08c0ceb4e2999cb8607cf415aae438494dc13/src/control/src/EncoderDriver.cpp#L46-L60).
 
 First we read the GPIO pins, assigning pinA as our most significant bit (MSB) and pinB as our least signicant bit (LSB).
 ```
@@ -92,10 +94,11 @@ A full count for a quadrature encoder is made of:
 `00 → 01 → 11 → 10 → 00`
 equivalent to 4 `encoderTicks`'s. 
 
-So to go from encoder ticks to motor shaft rotations, we divide by the `CPR * ticks per count`
-`ticks / (CPR * ticks per count)`
+So to go from encoder ticks to motor shaft rotations, we divide by `CPR * ticks per count`:
 
-From the [source code](https://github.com/emory-ducote/truckbot/blob/d813ef681b5e30e45ca81086c19ae69f53e4584d/src/control/src/EncoderDriver.cpp#L62-L70):
+`rotations = ticks / (CPR * ticks per count)`
+
+The following chunks of code are from the vehicle [source code](https://github.com/emory-ducote/truckbot/blob/d813ef681b5e30e45ca81086c19ae69f53e4584d/src/control/src/EncoderDriver.cpp#L62-L70):
 
 Given a `dt` (sampling rate), we can calculate the difference in encoder ticks over that time period and divide at like described. This gives us a value in unit `rotations`
 ```
