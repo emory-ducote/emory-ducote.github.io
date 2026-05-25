@@ -1,9 +1,10 @@
 
-The truckbot uses four [FIT0186 motors](https://www.digikey.com/short/144zn5cn):
 
 <div style="text-align:center; margin: 1.5rem 0;">
 	<img src="../images/FIT0186.png" alt="FIT0186 Motor" style="width: 20%;" />
 </div>
+
+The truckbot uses four [FIT0186 motors](https://www.digikey.com/short/144zn5cn):
 
 - Gear ratio: 43.8:1
 - No-load speed: 251 + 10% RPM
