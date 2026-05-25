@@ -258,8 +258,19 @@ footer hr {
     max-width: 98vw;
   }
 }
-code {
+pre {
+    background-color: #f0f0f0;
+    padding: 16px;
+    border-radius: 8px;
+    overflow-x: auto;
     font-size: 18px;
+    line-height: 1.5;
+}
+pre code {
+    background: transparent;
+    font-size: inherit;
+}
+code {
     background-color: #f0f0f0;
     padding: 2px 4px;
     border-radius: 4px;
